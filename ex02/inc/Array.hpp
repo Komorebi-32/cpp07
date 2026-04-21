@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 15:07:25 by michel_32         #+#    #+#             */
-/*   Updated: 2026/04/21 17:28:02 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/04/21 17:29:30 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,10 @@ template <typename T> class Array
 	// ---------- Getter and Setter Methods ------------
 
 	// ---------- Member Methods -----------------------
+    unsigned int    size() const
+    {
+        return (this->_size);
+    }
 
   protected:
 	// ---------- Protected Data Members ---------------------
