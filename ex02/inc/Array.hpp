@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 15:07:25 by michel_32         #+#    #+#             */
-/*   Updated: 2026/04/21 15:32:49 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/04/21 15:41:51 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,19 @@ template <typename T> class Array
 
 	Array<T>(void) : _array(new T[0]), _size(0) {
         std::cout << "Array<T> default constructor called" << std::endl;
+    };
+
+    /*
+    Construction with an unsigned int n as a parameter: Creates an array of n elements
+    initialized by default. 
+    The parentheses at the end of `new T[n]()` guarantee 
+    that primitive types will be initialized at zero (int becomes 0, pointers
+    become NULL). If no parentheses, the values would have been initialized to garbage
+    values. For classes, the default constructor will be called (same as without
+    the parentheses)
+    */
+    Array<T>(unsigned int n) : _array(new T[n]()), _size(n) {
+        std::cout << "Array<T> unsigned int n constructor called" << std::endl;
     };
 
 	Array<T>(const Array<T> &copy){
