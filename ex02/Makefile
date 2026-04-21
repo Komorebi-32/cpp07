@@ -6,17 +6,17 @@
 #    By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/16 14:08:56 by bkaras-g          #+#    #+#              #
-#    Updated: 2026/04/21 14:32:33 by michel_32        ###   ########.fr        #
+#    Updated: 2026/04/21 17:06:04 by michel_32        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .SILENT:
 
-NAME = ohMyTemplates
+NAME = classyTemplates
 
 SRC_FILES = main.cpp
 
-HEADERS_FILES = iter.hpp
+HEADERS_FILES = Array.hpp
 
 OBJ_DIR = obj
 SRC_DIR = src

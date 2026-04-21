@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 15:07:25 by michel_32         #+#    #+#             */
-/*   Updated: 2026/04/21 17:03:00 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/04/21 17:28:02 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,21 @@ template <typename T> class Array
         }
         return (*this);
     };
+
+    T   &operator[](unsigned int index)
+    {
+        if (index >= this->_size)
+            throw std::exception();
+        return (this->_array[index]);
+    };
+
+    // Const version: Allows reading from const Arrays
+    const T &operator[](unsigned int index) const
+    {
+        if (index >= this->_size)
+            throw std::exception();
+        return (this->_array[index]);
+    }
 
 	// ---------- Getter and Setter Methods ------------
 
