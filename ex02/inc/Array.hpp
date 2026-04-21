@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 15:07:25 by michel_32         #+#    #+#             */
-/*   Updated: 2026/04/21 16:59:17 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/04/21 17:03:00 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,11 @@ template <typename T> class Array
 
 	Array<T>(const Array<T> &copy){
         std::cout << "Array<T> copy constructor called" << std::endl;
-        *this = copy;
+
+        this->_array = new T[copy._size];
+        this->_size = copy._size;
+        for (unsigned int i = 0; i < this->_size; i++)
+              this->_array[i] = copy._array[i];
     };
     
 	~Array<T>(void){
@@ -67,7 +71,7 @@ template <typename T> class Array
         
         if (this != &copy) {
             T *new_array = new T[copy._size];
-            for (unsigned int i = 0; i < this->_size; i++)
+            for (unsigned int i = 0; i < copy._size; i++)
                new_array[i] = copy._array[i];
 
             delete[] this->_array;
