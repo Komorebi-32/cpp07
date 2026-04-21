@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 15:07:25 by michel_32         #+#    #+#             */
-/*   Updated: 2026/04/21 15:52:58 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/04/21 16:59:17 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,16 +55,24 @@ template <typename T> class Array
 
 	// ---------- Overloading Operators Methods -------
 
+    /*
+    Assignment operator with deep copy of each element of the Array. 
+    Using the Copy-and-Swap method: allocating and copying elements first, then delete
+    the old array. Safer than first delete then copy, because if `new` fails, 
+    `this->_array` would be in an undefined state.
+    */
 	Array<T> &operator=(const Array<T> &copy)
     {
         std::cout << "Array<T> assignment operator called" << std::endl;
         
         if (this != &copy) {
-            delete[] this->_array;
-            this->_array = new T[copy._size];
-            this->_size = copy._size;
+            T *new_array = new T[copy._size];
             for (unsigned int i = 0; i < this->_size; i++)
-                this->_array[i] = copy._array[i];
+               new_array[i] = copy._array[i];
+
+            delete[] this->_array;
+            this->_array = new_array;
+            this->_size = copy._size;  
         }
         return (*this);
     };
