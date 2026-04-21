@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 15:07:25 by michel_32         #+#    #+#             */
-/*   Updated: 2026/04/21 15:41:51 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/04/21 15:52:58 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,16 @@ template <typename T> class Array
 
 	// ---------- Overloading Operators Methods -------
 
-	Array<T> &operator=(const Array<T> &copy){
+	Array<T> &operator=(const Array<T> &copy)
+    {
         std::cout << "Array<T> assignment operator called" << std::endl;
+        
         if (this != &copy) {
-            // copy data members here
+            delete[] this->_array;
+            this->_array = new T[copy._size];
+            this->_size = copy._size;
+            for (unsigned int i = 0; i < this->_size; i++)
+                this->_array[i] = copy._array[i];
         }
         return (*this);
     };
