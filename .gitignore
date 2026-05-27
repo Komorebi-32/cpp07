@@ -2,7 +2,9 @@
 *.o
 
 # Executables
-
+beautifulTemplates
+ohMyTemplates
+classyTemplates
 
 # Core Dumps
 vgcore.*
