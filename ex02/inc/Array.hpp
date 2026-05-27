@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
+/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 15:07:25 by michel_32         #+#    #+#             */
-/*   Updated: 2026/04/21 18:10:58 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/05/27 16:56:26 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ template <typename T> class Array
   public:
 	// ---------- Constructors / Destructor ----------
 
-	Array<T>(void) : _array(new T[0]), _size(0) {
+	Array(void) : _array(new T[0]), _size(0) {
         std::cout << GREY << "Array<T> default constructor called" << RESET << std::endl;
     };
 
@@ -43,11 +43,11 @@ template <typename T> class Array
     values. For classes, the default constructor will be called (same as without
     the parentheses)
     */
-    Array<T>(unsigned int n) : _array(new T[n]()), _size(n) {
+    Array(unsigned int n) : _array(new T[n]()), _size(n) {
         std::cout << GREY << "Array<T> unsigned int n constructor called" << RESET << std::endl;
     };
 
-	Array<T>(const Array<T> &copy){
+	Array(const Array<T> &copy){
         std::cout << GREY << "Array<T> copy constructor called" << RESET << std::endl;
 
         this->_array = new T[copy._size];
@@ -56,7 +56,7 @@ template <typename T> class Array
               this->_array[i] = copy._array[i];
     };
     
-	~Array<T>(void){
+	~Array(void){
         std::cout << GREY << "Array<T> destructor called" << RESET << std::endl;
         delete[] _array;
     };
