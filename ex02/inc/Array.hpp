@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 15:07:25 by michel_32         #+#    #+#             */
-/*   Updated: 2026/05/27 16:56:26 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/05/27 17:01:05 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ template <typename T> class Array
   public:
 	// ---------- Constructors / Destructor ----------
 
-	Array(void) : _array(new T[0]), _size(0) {
+	Array(void) : _array(NULL), _size(0) {
         std::cout << GREY << "Array<T> default constructor called" << RESET << std::endl;
     };
 
