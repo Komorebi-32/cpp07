@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
+/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 17:55:34 by michel_32         #+#    #+#             */
-/*   Updated: 2026/04/21 14:36:44 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/05/27 16:21:06 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,10 @@ int main(void)
 
     std::cout << MAGENTA << "\n-----------initial tab----------" << RESET << std::endl;
     iter(tab, length, print);
-    std::cout << "\n";
     
     iter(tab, length, increment32);
 
-    std::cout << MAGENTA << "\n-----------incremented tab----------" << RESET << std::endl;
+    std::cout << MAGENTA << "-----------incremented tab----------" << RESET << std::endl;
     iter(tab, length, print);
     std::cout << "\n";
 }
